@@ -1,0 +1,3 @@
+[submodule "popup-glyph"]
+	path = popup-glyph
+	url = https://github.com/kyecedar/popup-glyph.git
