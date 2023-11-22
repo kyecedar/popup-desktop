@@ -1,0 +1,87 @@
+:root {
+	--touch-callout : none;
+	--user-select   : none;
+	--user-drag     : none;
+
+	--window-resize-border-size     : 5px;
+	--titlebar-height               : 30px;
+	--titlebar-control-button-width : 40px;
+
+	position : relative;
+	width    : 100vw;
+	height   : 100vh;
+}
+
+body {
+	position : relative;
+	width    : 100%;
+	height   : 100%;
+}
+
+* {
+	-webkit-touch-callout : var(--touch-callout);
+    -webkit-user-select   : var(--user-select);
+	-khtml-user-select    : var(--user-select);
+    -moz-user-select      : var(--user-select);
+    -ms-user-select       : var(--user-select);
+    user-select           : var(--user-select);
+
+	-webkit-user-drag : var(--user-drag);
+}
+
+#titlebar {
+	position : relative;
+	display  : flex;
+
+	flex-direction : row;
+	gap            : 0;
+	align-items    : flex-end;
+
+	width     : 100%;
+	max-width : 100%;
+	height    : var(--titlebar-height);
+}
+
+#titlebar .left,
+#titlebar .center,
+#titlebar .right {
+	height: 100%;
+}
+
+#titlebar .center {
+	flex-grow   : 1;
+}
+
+#titlebar .left,
+#titlebar .right {
+	display : flex;
+	
+	flex-shrink    : 0;
+
+	flex-direction : row;
+	gap            : 0;
+	flex-basis     : var(--window-resize-border-size);
+}
+
+#titlebar .center [data-tauri-drag-region] {
+	margin-top : var(--window-resize-border-size);
+
+	width  : 100%;
+	height : calc(100% - var(--window-resize-border-size));
+}
+
+#titlebar #window-control-buttons {
+	display : flex;
+
+	flex-direction : row;
+}
+
+#titlebar .window-control-button {
+	display: block;
+
+	flex-shrink : 0;
+	flex-basis  : var(--titlebar-control-button-width);
+	width       : var(--titlebar-control-button-width);
+	min-width   : var(--titlebar-control-button-width);
+	height      : var(--titlebar-height);
+}

@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   
 
@@ -9,7 +9,8 @@
     
     <title>Tauri App</title>
     
-    <link rel="stylesheet" href="/src/styles.css" />
+    <link rel="stylesheet" href="/src/css/reset.css" />
+    <link rel="stylesheet" href="/src/css/window.css" />
     
     <style>
       .logo.vite:hover {
@@ -28,7 +29,23 @@
 
   
 
-  <body>
+  <body oncontextmenu="return false;">
+    <div id="titlebar">
+      <div class="left"></div>
+      <div class="center">
+        <div data-tauri-drag-region></div>
+      </div>
+      <div class="right">
+        <div id="window-control-buttons">
+          <div id="window-button-minimize" class="window-control-button"><glyph src="/src/assets/glyphs/test.glyph" /></div>
+          <div id="window-button-maximize" class="window-control-button"><glyph src="" exempt></glyph></div>
+          <div id="window-button-close" class="window-control-button"></div>
+        </div>
+      </div>
+    </div>
+    <main>
+      <h1 label="testText"></h1>
+    </main>
   </body>
 
 
